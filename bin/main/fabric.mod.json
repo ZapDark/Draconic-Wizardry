@@ -1,16 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "daw",
+  "id": "dw",
   "version": "${version}",
 
-  "name": "Draconic and Wizardry",
+  "name": "Draconic Wizardry",
   "description": "Our Mod for our SE Project",
   "authors": [
-    "Me!"
+    "Zapheus",
+    "LordMerciful"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage":"",
+    "sources": "https://github.com/ZapDark/Draconic-Wizardry"
   },
 
   "license": "CC0-1.0",
@@ -19,7 +20,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.draconic.and.wizardry.DraconicAndWizardry"
+      "net.draconic.wizardry.DraconicWizardry"
     ]
   },
   "mixins": [
