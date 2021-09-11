@@ -14,7 +14,7 @@ public class DraconicWizardryMain implements ModInitializer {
 
     public static final EntityType<RedPandaEntity> REDPANDA = Registry.register(
         Registry.ENTITY_TYPE,
-        new Identifier("DraconicWizardryMain", "redpanda") , 
+        new Identifier("draconicwizardrymain", "redpanda") , 
         FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, RedPandaEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
         );
 
