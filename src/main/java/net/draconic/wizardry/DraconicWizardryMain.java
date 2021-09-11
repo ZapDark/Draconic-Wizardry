@@ -9,6 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import software.bernie.geckolib3.GeckoLib;
 
 public class DraconicWizardryMain implements ModInitializer {
 
@@ -21,7 +22,7 @@ public class DraconicWizardryMain implements ModInitializer {
     @Override
     public void onInitialize() {
 
-        FabricDefaultAttributeRegistry.register(REDPANDA, RedPandaEntity.createMobAttributes());
+        GeckoLib.initialize();
     }
     
 }
