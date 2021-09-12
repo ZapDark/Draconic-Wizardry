@@ -20,7 +20,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.draconic.wizardry.DraconicWizardry"
+      "net.draconic.wizardry.DraconicWizardryMain"
+    ],
+    "client": [
+      "net.draconic.wizardry.DraconicWizardryClient"
+
     ]
   },
   "mixins": [
