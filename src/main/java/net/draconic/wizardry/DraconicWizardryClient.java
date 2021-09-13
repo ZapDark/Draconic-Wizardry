@@ -9,11 +9,11 @@ import net.fabricmc.api.EnvType;
 
 @Environment(EnvType.CLIENT)
 public class DraconicWizardryClient implements ClientModInitializer {
-    
+        
     @Override
     public void onInitializeClient() 
     {
-        EntityRendererRegistry.register(EntityReg.RED_PANDA, 
+        EntityRendererRegistry.INSTANCE.register(EntityReg.RED_PANDA, 
         (ctx) -> new RedPandaRenderer(ctx));
     }
     
