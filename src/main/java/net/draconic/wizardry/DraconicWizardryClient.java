@@ -13,7 +13,7 @@ public class DraconicWizardryClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() 
     {
-        EntityRendererRegistry.register(DraconicWizardryMain.RED_PANDA, 
+        EntityRendererRegistry.register(EntityReg.RED_PANDA, 
         (ctx) -> new RedPandaRenderer(ctx));
     }
     
