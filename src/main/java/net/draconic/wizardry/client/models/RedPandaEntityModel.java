@@ -25,7 +25,7 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 		@Override
 		public Identifier getAnimationFileLocation(RedPandaEntity object)
 		{
-			return new Identifier(EntityReg.MOD_ID, "animations/red_panda.json");
+			return new Identifier(EntityReg.MOD_ID, "animations/red_panda_walk.json");
 		}
 		
 
