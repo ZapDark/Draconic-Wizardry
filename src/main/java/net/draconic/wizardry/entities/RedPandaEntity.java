@@ -27,11 +27,9 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("red_panda_walk.json", true));
             return PlayState.CONTINUE;
         }
-        else {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("red_panda_idle.json", true));
-            return PlayState.CONTINUE;
-        }
+        return null;
     }
+        
     
     @Override
     public void registerControllers(AnimationData data) {
