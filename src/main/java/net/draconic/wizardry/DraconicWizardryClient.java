@@ -14,7 +14,7 @@ public class DraconicWizardryClient implements ClientModInitializer {
     public void onInitializeClient() 
     {
         EntityRendererRegistry.register(EntityReg.RED_PANDA, 
-        (ctx) -> new RedPandaRenderer(ctx));
+        (context) -> new RedPandaRenderer(context));
     }
     
 }

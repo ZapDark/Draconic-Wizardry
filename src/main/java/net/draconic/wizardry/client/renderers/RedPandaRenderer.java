@@ -7,8 +7,8 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class RedPandaRenderer extends GeoEntityRenderer<RedPandaEntity>  {
 
-    public RedPandaRenderer(EntityRendererFactory.Context ctx) {
-        super(ctx, new RedPandaEntityModel());
+    public RedPandaRenderer(EntityRendererFactory.Context renderManager) {
+        super(renderManager, new RedPandaEntityModel());
         this.shadowRadius = 0.5F;
 
     }
