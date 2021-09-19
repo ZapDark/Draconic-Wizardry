@@ -1,22 +1,21 @@
 package net.draconic.wizardry;
 
+import net.draconic.wizardry.entities.RedPandaEntity;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import software.bernie.geckolib3.GeckoLib;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
-public class DraconicWizardryMain implements ModInitializer {
-
-   
+public class DraconicWizardryMain implements ModInitializer
+{
 
     @Override
-    public void onInitialize() {
+    public void onInitialize()
+    {
 
-        GeckoLib.initialize();
-
-        new EntityReg();
-
-        FabricDefaultAttributeRegistry.register(EntityReg.RED_PANDA, 
-        DefEntityAttributes.generateDefaultAttributes());
-    
     }
 }
