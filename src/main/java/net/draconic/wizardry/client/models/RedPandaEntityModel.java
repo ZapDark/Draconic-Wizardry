@@ -58,9 +58,19 @@ import net.minecraft.entity.passive.AnimalEntity;
 		@Override
 		public void setAngles(RedPandaEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 
+			this.body.yaw = 0;
+			this.front_right_foot.pitch = 0;
+			this.front_left_foot.pitch = 0;
+			this.back_right_foot.pitch = 0;
+			this.back_left_foot.pitch = 0;
+			this.tail.yaw = 0;
+
+
+			this.head.yaw = headYaw;
+
+
 		}
 	}
-
 
 
 
