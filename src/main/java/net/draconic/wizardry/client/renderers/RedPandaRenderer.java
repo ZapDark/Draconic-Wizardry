@@ -17,7 +17,8 @@ public class RedPandaRenderer extends MobEntityRenderer<RedPandaEntity, RedPanda
 
     }
     @Override
-    public Identifier getTexture(RedPandaEntity redPanda){
+    public Identifier getTexture(RedPandaEntity redPanda)
+    {
         return TEXTURE;
     }
 }

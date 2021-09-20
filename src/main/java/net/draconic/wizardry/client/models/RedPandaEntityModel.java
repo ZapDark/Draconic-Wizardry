@@ -9,7 +9,6 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT) 
 	public class RedPandaEntityModel<R extends AnimalEntity> extends EntityModel<RedPandaEntity>
@@ -44,7 +43,7 @@ import net.minecraft.util.Identifier;
 			ModelPartData modelFrontRightFoot = modelBody.addChild("front_right_foot", ModelPartBuilder.create().uv(0, 21).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 3.0F, 2.0F), ModelTransform.pivot(-1.0F, 0.0F, -5.0F));
 			ModelPartData modelFrontLeftFoot = modelBody.addChild("front_left_foot", ModelPartBuilder.create().uv(0, 10).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 3.0F, 2.0F), ModelTransform.pivot(3.0F, 0.0F, -5.0F));
 			ModelPartData modelBackRightFoot = modelBody.addChild("back_right_foot", ModelPartBuilder.create().uv(0, 4).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 3.0F, 2.0F), ModelTransform.pivot(-1.0F, 0.0F, 5.0F));
-			ModelPartData modelBackLeftFoot = modelBody.addChild("back_left_foot" , ModelPartBuilder.create().uv(0, 10).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 3.0F, 2.0F), ModelTransform.pivot(3.0F, 0.0F, 5.0F));
+			ModelPartData modelBackLeftFoot = modelBody.addChild("back_left_foot" , ModelPartBuilder.create().uv(6, 7).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 3.0F, 2.0F), ModelTransform.pivot(3.0F, 0.0F, 5.0F));
 			ModelPartData modelTail = modelBody.addChild("tail", ModelPartBuilder.create().uv(0, 21).cuboid(-2.0F, -3.5F, 0.0F, 4.0F, 5.0F, 9.0F), ModelTransform.pivot(1.0F, -3.5F, 8.0F));
 
 			return TexturedModelData.of(data, 64, 64);
@@ -52,6 +51,7 @@ import net.minecraft.util.Identifier;
 
 		@Override
 		public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
+			matrices.translate(0,1.311, 0);
 			ImmutableList.of(this.body, this.head, this.back_right_foot, this.back_left_foot, this.front_right_foot, this.front_left_foot, this.tail).forEach((modelRenderer) -> modelRenderer.render(matrices, vertices, light, overlay, red, green, blue, alpha));
 		}
 

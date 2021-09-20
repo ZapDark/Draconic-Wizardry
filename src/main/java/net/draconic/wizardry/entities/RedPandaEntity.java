@@ -7,7 +7,6 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.entity.mob.MobEntity;
 
 public class RedPandaEntity extends AnimalEntity
 {
@@ -26,7 +25,7 @@ public class RedPandaEntity extends AnimalEntity
 
     public static DefaultAttributeContainer.Builder generateRedPandaAttributes() 
     {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1.0D)
+        return AnimalEntity.createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 1.0D)
         .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D);
     }
 }

@@ -21,12 +21,13 @@ import net.minecraft.util.registry.Registry;
 @Environment(EnvType.CLIENT)
 public class DraconicWizardryClient implements ClientModInitializer {
 
-    public static final EntityType<RedPandaEntity> RED_PANDA = Registry.register(Registry.ENTITY_TYPE, new Identifier("draconic_wizardry","red_panda"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, RedPandaEntity::new).dimensions(EntityDimensions.fixed(0.75F,0.75F)).build());
+    public static final EntityType<RedPandaEntity> RED_PANDA = Registry.register(Registry.ENTITY_TYPE, new Identifier("draconic_wizardry","red_panda"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, RedPandaEntity::new).dimensions(EntityDimensions.fixed(1F,0.75F)).build());
     public static final EntityModelLayer MODEL_RED_PANDA_LAYER = new EntityModelLayer(new Identifier("dw", "red_panda"), "main");
         
     @Override
     public void onInitializeClient() 
     {
+        //Registry for all parts of the Red Panda entity
         EntityRendererRegistry.register(RED_PANDA, RedPandaRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(MODEL_RED_PANDA_LAYER, RedPandaEntityModel::getTexturedModelData);
         FabricDefaultAttributeRegistry.register(RED_PANDA, RedPandaEntity.generateRedPandaAttributes());
