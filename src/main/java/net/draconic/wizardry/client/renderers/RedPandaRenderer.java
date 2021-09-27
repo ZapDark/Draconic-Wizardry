@@ -1,25 +1,17 @@
 package net.draconic.wizardry.client.renderers;
 
-import net.draconic.wizardry.DraconicWizardryClient;
 import net.draconic.wizardry.client.models.RedPandaEntityModel;
 import net.draconic.wizardry.entities.RedPandaEntity;
 import net.minecraft.client.render.entity.EntityRendererFactory;
-import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.util.Identifier;
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class RedPandaRenderer extends MobEntityRenderer<RedPandaEntity, RedPandaEntityModel<RedPandaEntity>>
+public class RedPandaRenderer extends GeoEntityRenderer<RedPandaEntity>
 {
-    private static final Identifier TEXTURE = new Identifier("dw", "textures/entities/red_panda.png");
-
     public RedPandaRenderer(EntityRendererFactory.Context context)
     {
-        super(context, new RedPandaEntityModel<>(context.getPart(DraconicWizardryClient.MODEL_RED_PANDA_LAYER)),0.5F);
+        super(context, new RedPandaEntityModel());
+        this.shadowRadius = 0.5f;
 
-    }
-    @Override
-    public Identifier getTexture(RedPandaEntity redPanda)
-    {
-        return TEXTURE;
     }
 }
    

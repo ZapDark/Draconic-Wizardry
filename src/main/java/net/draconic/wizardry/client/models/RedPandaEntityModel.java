@@ -1,39 +1,56 @@
 package net.draconic.wizardry.client.models;
 
-import com.google.common.collect.ImmutableList;
 import net.draconic.wizardry.entities.RedPandaEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.model.*;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.entity.model.EntityModel;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.util.Identifier;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
+import software.bernie.geckolib3.core.processor.IBone;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib3.model.provider.data.EntityModelData;
+
+import static net.draconic.wizardry.DraconicWizardryMain.modID;
 
 @Environment(EnvType.CLIENT) 
-	public class RedPandaEntityModel<R extends AnimalEntity> extends EntityModel<RedPandaEntity>
+	public class RedPandaEntityModel extends AnimatedGeoModel<RedPandaEntity>
 	{
-		private final ModelPart body;
-		private final ModelPart front_right_foot;
-		private final ModelPart back_right_foot;
-		private final ModelPart front_left_foot;
-		private final ModelPart back_left_foot;
-		private final ModelPart head;
-		private final ModelPart tail;
 
-		public RedPandaEntityModel(ModelPart root) {
 
-			this.body = root.getChild("body");
-			this.head = body.getChild("head");
-			this.front_right_foot = body.getChild("front_right_foot");
-			this.back_right_foot = body.getChild("back_right_foot");
-			this.front_left_foot = body.getChild("front_left_foot");
-			this.back_left_foot = body.getChild("back_left_foot");
-			this.tail = body.getChild("tail");
-		}
-		public static TexturedModelData getTexturedModelData()
+
+		@Override
+		public Identifier getModelLocation(RedPandaEntity entity)
 		{
-			/*Creation and Storage of the actual model of the entity*/
+			return new Identifier(modID,"geo/red_panda.geo.json");
+		}
+
+		@Override
+		public Identifier getTextureLocation(RedPandaEntity entity)
+		{
+			return new Identifier(modID,"textures/entities/red_panda.png");
+		}
+
+		@Override
+		public Identifier getAnimationFileLocation(RedPandaEntity entity)
+		{
+			return new Identifier(modID,"animations/red.panda.json");
+		}
+
+		@Override
+		public void setLivingAnimations(RedPandaEntity entity, Integer uniqueID, AnimationEvent customPredicate)
+		{
+			super.setLivingAnimations(entity, uniqueID, customPredicate);
+			IBone head = this.getAnimationProcessor().getBone("head");
+
+			EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
+			if (head != null) {
+				head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));
+				head.setRotationY(extraData.netHeadYaw * ((float) Math.PI / 180F));
+			}
+
+		}
+		/*public static TexturedModelData getTexturedModelData()
+		{
+			/*Creation and Storage of the actual model of the entity
 			ModelData data = new ModelData();
 			ModelPartData modelData = data.getRoot();
 
@@ -58,18 +75,8 @@ import net.minecraft.entity.passive.AnimalEntity;
 		@Override
 		public void setAngles(RedPandaEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 
-			this.body.yaw = 0;
-			this.front_right_foot.pitch = 0;
-			this.front_left_foot.pitch = 0;
-			this.back_right_foot.pitch = 0;
-			this.back_left_foot.pitch = 0;
-			this.tail.yaw = 0;
-
-
-			this.head.yaw = headYaw;
-
-
-		}
+			this.back_right_foot.pitch = -0.8733046401F;
+		}*/
 	}
 
 
