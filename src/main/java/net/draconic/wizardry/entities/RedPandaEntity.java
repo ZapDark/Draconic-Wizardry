@@ -11,6 +11,7 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import org.lwjgl.system.CallbackI;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -22,6 +23,13 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class RedPandaEntity extends AnimalEntity implements IAnimatable {
 
     AnimationFactory factory = new AnimationFactory(this);
+    private RedPandaState redPandaState = RedPandaState.idle;
+
+    public enum RedPandaState
+    {
+        idle,
+        moving
+    }
 
 
     public RedPandaEntity(EntityType<? extends AnimalEntity> type, World worldIn)
@@ -47,22 +55,59 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-        if(event.isMoving())
+        //SCENARIO 1 - This is when he's not moving, and we know he is not moving
+        //SCENARIO 2 - This is when he is moving, and we think he is not moving
+        //SCENARIO 3 - This is when he is moving, and we think he is moving
+        //SCENARIO 4 - This is when he is  not moving, and we think he is moving
+
+        if(!event.isMoving() && redPandaState == RedPandaState.idle)
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("red.panda.tailwag", true));
+            return PlayState.CONTINUE;
+        }
+        else if(event.isMoving() && redPandaState == RedPandaState.idle)
+        {
+            //event.getController().setAnimation(new AnimationBuilder().addAnimation("red.panda.tailwag", true));
+            redPandaState = RedPandaState.moving;
+            return PlayState.STOP;
+        }
+        else if(event.isMoving() && redPandaState == RedPandaState.moving)
         {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("red.panda.walk", true));
             return PlayState.CONTINUE;
         }
         else
         {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("red.panda.tailwag", true));
+            //event.getController().setAnimation(new AnimationBuilder().addAnimation("red.panda.walk", true));
+            redPandaState = RedPandaState.idle;
+            return PlayState.STOP;
         }
-        return PlayState.STOP;
+
+        /*if(event.isMoving() && redPandaState == RedPandaState.moving)
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("red.panda.walk", true));
+            return PlayState.CONTINUE;
+        }
+        else if(redPandaState == RedPandaState.idle)
+        {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("red.panda.tailwag", true));
+            return PlayState.CONTINUE;
+        }
+        else if()
+        {
+
+        }
+        else
+        {
+            return PlayState.STOP;
+
+        }*/
     }
 
     @Override
     public void registerControllers(AnimationData animationData)
     {
-        animationData.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
+        animationData.addAnimationController(new AnimationController<>(this, "controller", 1, this::predicate));
     }
 
     @Override
