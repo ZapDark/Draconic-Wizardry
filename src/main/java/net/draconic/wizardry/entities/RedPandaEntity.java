@@ -2,9 +2,11 @@ package net.draconic.wizardry.entities;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.WanderAroundGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
@@ -50,6 +52,7 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
         super.initGoals();
         this.goalSelector.add(0, new WanderAroundGoal(this, 0.5D));
         this.goalSelector.add(1, new LookAroundGoal(this));
+        this.goalSelector.add(3, new SwimGoal(this));
 
     }
 
@@ -83,25 +86,6 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
             return PlayState.STOP;
         }
 
-        /*if(event.isMoving() && redPandaState == RedPandaState.moving)
-        {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("red.panda.walk", true));
-            return PlayState.CONTINUE;
-        }
-        else if(redPandaState == RedPandaState.idle)
-        {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("red.panda.tailwag", true));
-            return PlayState.CONTINUE;
-        }
-        else if()
-        {
-
-        }
-        else
-        {
-            return PlayState.STOP;
-
-        }*/
     }
 
     @Override
@@ -119,5 +103,12 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return null;
+    }
+
+    @Override
+    public boolean handleFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource)
+    {
+        return super.handleFallDamage(fallDistance, damageMultiplier, damageSource);
+
     }
 }
