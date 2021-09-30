@@ -2,6 +2,7 @@ package net.draconic.wizardry.entities;
 
 import net.draconic.wizardry.client.registry.EntityRegistry;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.brain.task.BreedTask;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.WanderAroundGoal;

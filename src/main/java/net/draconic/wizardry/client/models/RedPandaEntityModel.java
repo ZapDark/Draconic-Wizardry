@@ -1,6 +1,6 @@
 package net.draconic.wizardry.client.models;
 
-import net.draconic.wizardry.entities..passive.RedPandaEntity;
+import net.draconic.wizardry.entities.RedPandaEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.util.Identifier;
