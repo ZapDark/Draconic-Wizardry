@@ -1,5 +1,6 @@
 package net.draconic.wizardry.entities;
 
+import net.draconic.wizardry.client.registry.EntityRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
@@ -10,6 +11,8 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -43,7 +46,7 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
 
     public static DefaultAttributeContainer.Builder generateRedPandaAttributes() 
     {
-        return AnimalEntity.createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5D)
+        return AnimalEntity.createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D)
         .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D);
     }
 
@@ -101,8 +104,9 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
 
     @Nullable
     @Override
-    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return null;
+    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity)
+    {
+        return (PassiveEntity) EntityRegistry.RED_PANDA.create(world);
     }
 
     @Override
@@ -110,5 +114,11 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
     {
         return super.handleFallDamage(fallDistance, damageMultiplier, damageSource);
 
+    }
+
+    @Override
+    public boolean isBreedingItem(ItemStack stack)
+    {
+        return stack.getItem() == Items.GLOW_BERRIES;
     }
 }
