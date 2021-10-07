@@ -3,6 +3,7 @@ package net.draconic.wizardry.entities;
 import net.draconic.wizardry.client.registry.EntityRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.brain.task.BreedTask;
+import net.minecraft.entity.ai.goal.AnimalMateGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.WanderAroundGoal;
@@ -45,7 +46,7 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
 
     public static DefaultAttributeContainer.Builder generateRedPandaAttributes() 
     {
-        return AnimalEntity.createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25D)
+        return AnimalEntity.createMobAttributes().add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.1D)
         .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D);
     }
 
@@ -55,6 +56,7 @@ public class RedPandaEntity extends AnimalEntity implements IAnimatable {
         this.goalSelector.add(0, new WanderAroundGoal(this, 0.5D));
         this.goalSelector.add(1, new LookAroundGoal(this));
         this.goalSelector.add(3, new SwimGoal(this));
+        this.goalSelector.add(4, new AnimalMateGoal(this, 1));
 
     }
 
