@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        " / ",
+        "/  "
+    ],
+    "key": {
+        "#": {
+            "item": "dw:gem_earth"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {},
+    "group": "COMBAT"
+}
