@@ -7,12 +7,15 @@
     ],
     "key": {
         "#": {
-            "item": "dw:gem_fire"
+            "item": "dw:fire_gem"
         },
         "/": {
             "item": "minecraft:stick"
         }
     },
-    "result": {},
+    "result": {
+        "item": "dw:fire_wand",
+        "count": 1
+    },
     "group": "COMBAT"
 }

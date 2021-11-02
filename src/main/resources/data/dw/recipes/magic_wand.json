@@ -7,12 +7,15 @@
     ],
     "key": {
         "#": {
-            "item": "dw:gem_magic"
+            "item": "dw:magic_gem"
         },
         "/": {
             "item": "minecraft:stick"
         }
     },
-    "result": {},
+    "result": {
+        "item": "dw:magic_wand",
+        "count": 1
+    },
     "group": "COMBAT"
 }

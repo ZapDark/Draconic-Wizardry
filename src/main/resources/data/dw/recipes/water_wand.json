@@ -7,12 +7,15 @@
     ],
     "key": {
         "#": {
-            "item": "dw:gem_water"
+            "item": "dw:water_gem"
         },
         "/": {
             "item": "minecraft:stick"
         }
     },
-    "result": {},
+    "result": {
+        "item": "dw:water_wand",
+        "count": 1
+    },
     "group": "COMBAT"
 }

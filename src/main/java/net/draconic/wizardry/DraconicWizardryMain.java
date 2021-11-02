@@ -1,5 +1,6 @@
 package net.draconic.wizardry;
 
+import net.draconic.wizardry.registry.ModItems;
 import net.fabricmc.api.ModInitializer;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -10,6 +11,7 @@ public class DraconicWizardryMain implements ModInitializer
     @Override
     public void onInitialize()
     {
+        ModItems.registerItems();
         GeckoLib.initialize();
 
     }
