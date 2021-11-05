@@ -31,8 +31,6 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "water_wand"), WATER_WAND);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "magic_wand"), MAGIC_WAND);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "earth_wand"), EARTH_WAND);
-        
-
     }
     
 }
