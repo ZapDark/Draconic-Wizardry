@@ -30,7 +30,7 @@ import org.apache.logging.log4j.Level;
 
 import java.util.List;
 
-public class DragonNest extends StructureFeature<defaultFeatureConfig>
+public class DragonNest extends StructureFeature<DefaultFeatureConfig>
 {
   public DragonNest(Codec<DefaultFeatureConfig> codec)
   {
@@ -108,9 +108,9 @@ public class DragonNest extends StructureFeature<defaultFeatureConfig>
      * structure's spacing into the chunk generator, the structure will not spawn in that dimension!
      */
      /*@Override
-     protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long seed, ChunkRandom chunkRandom, int chunkX, int chunkZ, Biome bioome, ChunkPos chunkPos. DefaultFeatureConfig featureConfig)
+     protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long seed, ChunkRandom chunkRandom, int chunkX, int chunkZ, Biome biome, ChunkPos chunkPos, DefaultFeatureConfig featureConfig)
      {
-        BlockPos centerOfChunk = new BlockPos((((chunkX << 4) + 7, 0, (chunkZ << 4) + 7);
+        BlockPos centerOfChunk = new BlockPos((chunkX << 4) + 7, 0, (chunkZ << 4) + 7);
         int landHeight = chunkGenerator.getHeightInGround(centerOfChunk.getX(), centerOfChunk.getZ(), Heightmap.Type.WORLD_SURFACE_WG);
         BlockView columnOfBlocks = chunkGenerator.getColumnSample(centerOfChunk.getX(), centerOfChunk.getZ());
         BlockState topBlock = columnOfBlocks.getBlockState(centerOfChunk.up(landHeight));
@@ -125,7 +125,7 @@ public class DragonNest extends StructureFeature<defaultFeatureConfig>
             super(structureIn, chunkX, chunkZ, blockBox, referenceIn, seedIn);
         }
         @Override
-        public void init(DynamicRegistryManager dynamicRegistryManager, ChunkGenerator chunkGenerator, StructureManager structureManager, int chunkX, intchunkZ, Biome biome, DefaultFeatureConfig defaultFeatureConfig
+        public void init(DynamicRegistryManager dynamicRegistryManager, ChunkGenerator chunkGenerator, StructureManager structureManager, int chunkX, intchunkZ, Biome biome, DefaultFeatureConfig defaultFeatureConfig)
         {
           //Turns the chunk coordinates into actual coordinates we can use. (Gets center of that chunk)
           int x = (chunkX << 4) + 7;
