@@ -30,9 +30,9 @@ import org.apache.logging.log4j.Level;
 
 import java.util.List;
 
-public class DragonNest extends StructureFeature<DefaultFeatureConfig>
+public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
 {
-  public DragonNest(Codec<DefaultFeatureConfig> codec)
+  public DragonNestStructure(Codec<DefaultFeatureConfig> codec)
   {
     super(codec);
   }
@@ -114,7 +114,7 @@ public class DragonNest extends StructureFeature<DefaultFeatureConfig>
         int landHeight = chunkGenerator.getHeightInGround(centerOfChunk.getX(), centerOfChunk.getZ(), Heightmap.Type.WORLD_SURFACE_WG);
         BlockView columnOfBlocks = chunkGenerator.getColumnSample(centerOfChunk.getX(), centerOfChunk.getZ());
         BlockState topBlock = columnOfBlocks.getBlockState(centerOfChunk.up(landHeight));
-        return topBlock.getFluidState().isEmpty();
+        return topBlock.getFluidState().isEmpty() //landHeight > 100;
      }
      */
      
