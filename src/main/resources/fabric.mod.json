@@ -7,7 +7,8 @@
   "description": "Our Mod for our SE Project",
   "authors": [
     "Zapheus",
-    "LordMerciful"
+    "LordMerciful",
+    "That1homosapien"
   ],
   "contact": {
     "homepage":"",
@@ -28,7 +29,7 @@
     ]
   },
   "mixins": [
-    
+    "modid.mixins.json"
   ],
 
   "depends": {
