@@ -22,7 +22,7 @@ import java.util.Map
 public class DraconicWizardryMain implements ModInitializer
 {
     public static final Logger LOGGER = LogManager.getLogger();
-    public static final String MODID = "dw";
+    public static final String modID = "dw";
 
     @Override
     @SuppressWarnings("deprecation")
@@ -32,7 +32,7 @@ public class DraconicWizardryMain implements ModInitializer
         GeckoLib.initialize();
         DraconicWizardryStructures.setupAndRegisterStructureFeatures();
         DraconicWizardryConfiguredStructures();
-        BiomeModifications.create(new Identifier(MODID, "dragon_nest_addition"))
+        BiomeModifications.create(new Identifier(modID, "dragon_nest_addition"))
             .add(
                     ModificationPhase.ADDITIONS,
                     BiomeSelectors.all(),
