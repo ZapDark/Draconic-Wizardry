@@ -11,7 +11,6 @@ import net.minecraft.world.gen.feature.StructureFeature;
 
 public class DraconicWizardryStructures
 {
-  /*
   public static StructureFeature<DefaultFeatureConfig> DRAGON_NEST = new DragonNestStructure(DefaultFeatureConfig.CODEC);
   //public static void setupAndRegisterStructureFeatures()
   {
@@ -24,6 +23,5 @@ public class DraconicWizardryStructures
     .superflatFeature(DRAGON_NEST.configure(FeatureConfig.DEFAULT))
     .adjustsSurface()
     .register();
-  */
   }
 }
