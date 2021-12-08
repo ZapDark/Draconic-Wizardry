@@ -119,7 +119,6 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
      */
      
      // Handles calling up the structure's pieces class and height that structure will spawn at.
-     /*
     public static class Start extends MarginedStructureStart<DefaultFeatureConfig> {
         public Start(StructureFeature<DefaultFeatureConfig> structureIn, int chunkX, int chunkZ, BlockBox blockBox, int referenceIn, long seedIn) {
             super(structureIn, chunkX, chunkZ, blockBox, referenceIn, seedIn);
@@ -132,21 +131,25 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
           int z = (chunkZ << 4) + 7;
           
           
+             /* 
              * We pass this into method_30419 to tell it where to generate the structure.
              * If method_30419's last parameter is true, blockpos's Y value is ignored and the
              * structure will spawn at terrain height instead. Set that parameter to false to
              * force the structure to spawn at blockpos's Y value instead. You got options here!
+             */
              
             BlockPos.Mutable blockpos = new BlockPos.Mutable(x, 0, z);
 
             
+             /* 
              * If you are doing Nether structures, you'll probably want to spawn your structure on top of ledges.
              * Best way to do that is to use getColumnSample to grab a column of blocks at the structure's x/z position.
              * Then loop through it and look for land with air above it and set blockpos's Y value to it.
              * Make sure to set the final boolean in StructurePoolBasedGenerator.method_30419 to false so
              * that the structure spawns at blockpos's y value instead of placing the structure on the Bedrock roof!
+             */
              
-            //BlockView blockView = chunkGenerator.getColumnSample(blockpos.getX(), blockpos.getZ());
+            BlockView blockView = chunkGenerator.getColumnSample(blockpos.getX(), blockpos.getZ());
 
             // All a structure has to do is call this method to turn it into a jigsaw based structure!
             StructurePoolBasedGenerator.method_30419(
@@ -176,4 +179,3 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
                            //Either not intersecting or fully contained will make children pieces spawn just fine. It's easier that way.
                     true); //Place at heightmap (top land). Set this to false for structure to be place at the passed in blockpos's Y value instead.
                            //Definitely keep this false when placing structures in the nether as otherwise, heightmap placing will put the structure on the Bedrock roof.
-*/
