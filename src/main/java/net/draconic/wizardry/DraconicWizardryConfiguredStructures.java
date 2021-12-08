@@ -12,7 +12,7 @@ public class DraconicWizardryConfiguredStructures {
      */
     public static ConfiguredStructureFeature<?, ?> CONFIGURED_DRAGON_NEST = DraconicWizardryStructures.DRAGON_NEST.configure(DefaultFeatureConfig.DEFAULT);
   
-    /**
+    /*
      * Registers the configured structure which is what gets added to the biomes.
      * You can use the same identifier for the configured structure as the regular structure
      * because the two fo them are registered to different registries.
