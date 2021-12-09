@@ -1,5 +1,8 @@
 package net.draconic.wizardry.registry;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.draconic.wizardry.items.*;
@@ -23,6 +26,7 @@ public class ModItems{
     public static final WaterWand WATER_WAND = new WaterWand(new WaterWand.Settings().group(ItemGroup.COMBAT));
     public static final MagicWand MAGIC_WAND = new MagicWand(new MagicWand.Settings().group(ItemGroup.COMBAT));
     public static final EarthWand EARTH_WAND = new EarthWand(new EarthWand.Settings().group(ItemGroup.COMBAT));
+    public static final BlockItem TIN_ORE = new BlockItem(ModBlocks.TIN_ORE, new BlockItem.Settings().group(ItemGroup.BUILDING_BLOCKS));
 
     
     public static void registerItems(){
@@ -41,6 +45,7 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "water_wand"), WATER_WAND);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "magic_wand"), MAGIC_WAND);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "earth_wand"), EARTH_WAND);
+        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "tin_ore"), TIN_ORE);
     }
     
 }
