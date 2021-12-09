@@ -1,3 +1,17 @@
 {
-    "item.dw.draconic_wand": "Draconic Wand"
+    "item.dw.ice_wand": "Ice Wand",
+    "item.dw.fire_wand": "Fire Wand",
+    "item.dw.water_wand": "Water Wand",
+    "item.dw.earth_wand": "Earth Wand",
+    "item.dw.magic_wand": "Magic Wand",
+    "item.dw.ice_gem": "Ice Gem",
+    "item.dw.fire_gem": "Fire Gem",
+    "item.dw.water_gem": "Water Gem",
+    "item.dw.earth_gem": "Earth Gem",
+    "item.dw.magic_gem": "Magic Gem",
+    "item.dw.ice_gem_large": "Large Ice Gem",
+    "item.dw.fire_gem_large": "Large Fire Gem",
+    "item.dw.water_gem_large": "Large Water Gem",
+    "item.dw.earth_gem_large": "Large Earth Gem",
+    "item.dw.magic_gem_large": "Large Magic Gem",
 }
