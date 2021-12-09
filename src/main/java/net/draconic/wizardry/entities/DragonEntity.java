@@ -28,6 +28,7 @@ public class DragonEntity extends HostileEntity implements IAnimatable
     public DragonEntity(EntityType<? extends HostileEntity> entityType, World world)
     {
         super(entityType, world);
+        this.moveControl = new DragonFlyingMovementController(this, 8,false);
     }
 
     public static DefaultAttributeContainer.Builder dragonStats()
