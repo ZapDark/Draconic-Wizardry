@@ -14,7 +14,7 @@ public class IceWand extends Item{
     }
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand){
-
+        
         return null;      
     }
 }
