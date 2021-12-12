@@ -12,7 +12,7 @@ import net.minecraft.world.gen.feature.StructureFeature;
 public class DraconicWizardryStructures
 {
   public static StructureFeature<DefaultFeatureConfig> DRAGON_NEST = new DragonNestStructure(DefaultFeatureConfig.CODEC);
-  //public static void setupAndRegisterStructureFeatures()
+  public static void setupAndRegisterStructureFeatures()
   {
     FabricStructureBuilder.create(new Identifier(DraconicWizardryMain.modID, "dragon_nest"), DRAGON_NEXT)
     .step(GenerationStep.Feature.SURFACE_STRUCTURES)
