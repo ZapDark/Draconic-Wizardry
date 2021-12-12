@@ -32,6 +32,8 @@ public class ModItems{
     public static final BlockItem TIN_ORE = new BlockItem(ModBlocks.TIN_ORE, new BlockItem.Settings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Item TIN_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
     public static final Item RAW_TIN = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
+    //Chisel :)
+    public static final Item CHISEL = new Item(new Item.Settings().group(ItemGroup.TOOLS));
 
     
     public static void registerItems(){
@@ -57,6 +59,8 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "tin_ore"), TIN_ORE);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "tin_ingot"), TIN_INGOT);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "raw_tin"), RAW_TIN);
+        //Chisel part 2 registration of the chisel
+        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "chisel"), CHISEL);
     }
     
 }

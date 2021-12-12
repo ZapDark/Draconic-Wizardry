@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "dw:ice_gem_large"
+        },
+        "/": {
+            "item": "dw:chisel"
+        }
+    },
+    "result": {
+        "item": "dw:ice_gem",
+        "count": 1
+    },
+    "group": "MATERIALS"
+}
