@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "dw:item/fire_wand"
+        "layer0": "dw:items/fire_wand"
     }
 }

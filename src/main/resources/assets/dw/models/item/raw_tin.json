@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "dw:item/raw_tin"
+        "layer0": "dw:items/raw_tin"
     }
 }

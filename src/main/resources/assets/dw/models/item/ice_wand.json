@@ -1,6 +1,6 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "dw:item/ice_wand"
+        "layer0": "dw:items/ice_wand"
     }
 }

@@ -41,11 +41,12 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "water_gem"), WATER_GEM);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "magic_gem"), MAGIC_GEM);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "earth_gem"), EARTH_GEM);
-        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "fire_gem"), FIRE_GEM_LARGE);
-        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "ice_gem"), ICE_GEM_LARGE);
-        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "water_gem"), WATER_GEM_LARGE);
-        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "magic_gem"), MAGIC_GEM_LARGE);
-        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "earth_gem"), EARTH_GEM_LARGE);
+
+        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "fire_gem_large"), FIRE_GEM_LARGE);
+        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "ice_gem_large"), ICE_GEM_LARGE);
+        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "water_gem_large"), WATER_GEM_LARGE);
+        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "magic_gem_large"), MAGIC_GEM_LARGE);
+        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "earth_gem_large"), EARTH_GEM_LARGE);
         //Wands
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "fire_wand"), FIRE_WAND);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "ice_wand"), ICE_WAND);

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "dw:item/water_gem"
+        "layer0": "dw:items/water_gem"
     }
 }

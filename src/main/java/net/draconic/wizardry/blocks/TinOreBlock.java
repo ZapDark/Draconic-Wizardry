@@ -1,4 +1,4 @@
-package net.draconic.wizardry.items;
+package net.draconic.wizardry.blocks;
 
 import java.util.Random;
 

@@ -13,5 +13,8 @@
     "item.dw.fire_gem_large": "Large Fire Gem",
     "item.dw.water_gem_large": "Large Water Gem",
     "item.dw.earth_gem_large": "Large Earth Gem",
-    "item.dw.magic_gem_large": "Large Magic Gem"
+    "item.dw.magic_gem_large": "Large Magic Gem",
+    "item.dw.raw_tin": "Raw Tin",
+    "item.dw.tin_ingot": "Tin Ingot", 
+    "block.dw.tin_ore": "Tin Ore"
 }
