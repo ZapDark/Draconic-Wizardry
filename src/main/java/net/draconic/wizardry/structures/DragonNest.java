@@ -107,7 +107,7 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
      * StructureTutorialMain class. If you check for the dimension there and do not add your
      * structure's spacing into the chunk generator, the structure will not spawn in that dimension!
      */
-     /*@Override
+     @Override
      protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long seed, ChunkRandom chunkRandom, int chunkX, int chunkZ, Biome biome, ChunkPos chunkPos, DefaultFeatureConfig featureConfig)
      {
         BlockPos centerOfChunk = new BlockPos((chunkX << 4) + 7, 0, (chunkZ << 4) + 7);
@@ -116,7 +116,6 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
         BlockState topBlock = columnOfBlocks.getBlockState(centerOfChunk.up(landHeight));
         return topBlock.getFluidState().isEmpty() //landHeight > 100;
      }
-     */
      
      // Handles calling up the structure's pieces class and height that structure will spawn at.
     public static class Start extends MarginedStructureStart<DefaultFeatureConfig> {
@@ -149,7 +148,7 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
              * that the structure spawns at blockpos's y value instead of placing the structure on the Bedrock roof!
              */
              
-            BlockView blockView = chunkGenerator.getColumnSample(blockpos.getX(), blockpos.getZ());
+            //BlockView blockView = chunkGenerator.getColumnSample(blockpos.getX(), blockpos.getZ());
 
             // All a structure has to do is call this method to turn it into a jigsaw based structure!
             StructurePoolBasedGenerator.method_30419(
