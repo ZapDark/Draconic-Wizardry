@@ -42,13 +42,13 @@ public class NoiseChunkGeneratorMixin
     private static List<SpawnSettings.SpawnEntry> getStructureSpawns(Biome biome, StructureAccessor accessor, SpawnGroup group, BlockPos pos){
 
         if (group == SpawnGroup.MONSTER) {
-            if (accessor.getStructureAt(pos, true, STStructures.RUN_DOWN_HOUSE).hasChildren()) {
-                return STStructures.RUN_DOWN_HOUSE.getMonsterSpawns();
+            if (accessor.getStructureAt(pos, true, DraconicWizardry.DRAGON_NEST).hasChildren()) {
+                return DraconicWizardry.DRAGON_NEST.getMonsterSpawns();
             }
         }
         else if (group == SpawnGroup.CREATURE) {
-            if (accessor.getStructureAt(pos, true, STStructures.RUN_DOWN_HOUSE).hasChildren()) {
-                return STStructures.RUN_DOWN_HOUSE.getCreatureSpawns();
+            if (accessor.getStructureAt(pos, true, DraconicWizardry.DRAGON_NEST).hasChildren()) {
+                return DraconicWizardry.DRAGON_NEST.getCreatureSpawns();
             }
         }
 
