@@ -19,7 +19,7 @@ public class DraconicWizardryStructures
     .defaultConfig(new StructureConfig(
           100, // average distance apart in chunks between spawn attempts
           10, // minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE
-          409798521 // this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique.))
+          409798521)) // this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique.
     .superflatFeature(DRAGON_NEST.configure(FeatureConfig.DEFAULT))
     .adjustsSurface()
     .register();
