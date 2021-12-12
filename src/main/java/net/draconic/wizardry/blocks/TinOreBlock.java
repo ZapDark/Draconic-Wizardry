@@ -15,7 +15,6 @@ public class TinOreBlock extends Block{
 
     public TinOreBlock(Settings settings){
         super(settings);
-
     }
 
     protected int getExperienceWhenMined(Random random){
