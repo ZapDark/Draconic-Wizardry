@@ -15,6 +15,8 @@ public class DraconicWizardryMain implements ModInitializer
         ModBlocks.registerBlocks();
         ModFeatures.registerFeatures();
         GeckoLib.initialize();
+        EntityRegistry.register();
+        SpawnInit.init();
 
     }
 }

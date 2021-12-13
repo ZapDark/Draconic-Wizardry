@@ -20,7 +20,7 @@ import static net.draconic.wizardry.DraconicWizardryMain.modID;
 public class EntityRegistry
 {
     public static final EntityType<DragonEntity> DRAGON = Registry.register(Registry.ENTITY_TYPE, new Identifier(modID,"dragon"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, DragonEntity::new).dimensions(EntityDimensions.fixed(6F,1F)).build());
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, DragonEntity::new).dimensions(EntityDimensions.fixed(6F,1F)).build());
 
     public static final EntityType<RedPandaEntity> RED_PANDA = Registry.register(Registry.ENTITY_TYPE, new Identifier(modID,"red_panda"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, RedPandaEntity::new).dimensions(EntityDimensions.fixed(1F,0.75F)).build());
