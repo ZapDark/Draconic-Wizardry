@@ -28,6 +28,7 @@
     ]
   },
   "mixins": [
+    "draconic.wizardry.mixins.json"
     
   ],
 

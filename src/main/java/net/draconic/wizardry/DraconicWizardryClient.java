@@ -12,6 +12,6 @@ public class DraconicWizardryClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() 
     {
-        EntityRegistry.register();
+
     }
 }

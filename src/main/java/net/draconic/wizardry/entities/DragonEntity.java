@@ -1,5 +1,6 @@
 package net.draconic.wizardry.entities;
 
+import net.draconic.wizardry.client.registry.EntityRegistry;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityStatuses;
@@ -24,6 +25,7 @@ import java.util.Random;
 public class DragonEntity extends HostileEntity implements IAnimatable
 {
     AnimationFactory factory = new AnimationFactory(this);
+    public boolean DragonCanSpawn = true;
 
     public DragonEntity(EntityType<? extends HostileEntity> entityType, World world)
     {
@@ -35,7 +37,8 @@ public class DragonEntity extends HostileEntity implements IAnimatable
     {
         return HostileEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 200.0D)
-                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0D);
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5.0D)
+                .add(EntityAttributes.GENERIC_FLYING_SPEED,2D);
     }
 
     @Override
@@ -70,10 +73,15 @@ public class DragonEntity extends HostileEntity implements IAnimatable
         return 1;
     }
 
-    public static boolean canSpawn(EntityType<DragonEntity> type, ServerWorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random)
+    @Override
+    public boolean canSpawn(WorldView view)
     {
-        return ((world.getBlockState(pos.down()).isOf(Blocks.GRASS_BLOCK) || world.getBlockState(pos.down()).isOf(Blocks.DIRT))
-                && world.getBaseLightLevel(pos, 0) > 8 && world.isSkyVisible(pos) && world.getRandom().nextFloat() < 0.5F)
-                || spawnReason == SpawnReason.SPAWNER;
+        BlockPos blockUnderEntity = new BlockPos(this.getX(), this.getY()-1, this.getZ());
+        BlockPos posEntity = new BlockPos(this.getX(), this.getY(), this.getZ());
+        return view.intersectsEntities(this) && this.world.isNight() && !world.containsFluid(this.getBoundingBox())
+                && this.world.getBlockState(posEntity).getBlock().canMobSpawnInside()
+                && this.world.getBlockState(blockUnderEntity).allowsSpawning(view, blockUnderEntity, EntityRegistry.DRAGON)
+                && DragonCanSpawn;
     }
+
 }
