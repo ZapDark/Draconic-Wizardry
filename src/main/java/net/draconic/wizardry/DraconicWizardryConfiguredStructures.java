@@ -24,6 +24,6 @@ public class DraconicWizardryConfiguredStructures {
     public static void registerConfiguredStructures()
     {
       Registry<ConfiguredStructureFeature<?, ?>> registry = BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE;
-      Registry.Register(registry, new Identifier(DraconicWizardryMain.modID, "configured_dragon_nest"), CONFIGURED_DRAGON_NEST);
+      Registry.register(registry, new Identifier(DraconicWizardryMain.modID, "configured_dragon_nest"), CONFIGURED_DRAGON_NEST);
     }
 }
