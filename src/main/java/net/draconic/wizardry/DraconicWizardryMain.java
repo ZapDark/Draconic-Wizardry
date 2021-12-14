@@ -16,8 +16,8 @@ import net.minecraft.world.gen.feature.StructureFeature;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.HashMap
-import java.util.Map
+import java.util.HashMap;
+import java.util.Map;
 
 public class DraconicWizardryMain implements ModInitializer
 {
@@ -31,7 +31,7 @@ public class DraconicWizardryMain implements ModInitializer
         ModItems.registerItems();
         GeckoLib.initialize();
         DraconicWizardryStructures.setupAndRegisterStructureFeatures();
-        DraconicWizardryConfiguredStructures();
+        DraconicWizardryConfiguredStructures.registerConfiguredStructures();
         BiomeModifications.create(new Identifier(modID, "dragon_nest_addition"))
             .add(
                     ModificationPhase.ADDITIONS,
@@ -55,7 +55,7 @@ public class DraconicWizardryMain implements ModInitializer
      {
         ServerWorldEvents.LOAD.register((MinecraftServer minecraftServer, ServerWorld serverWorld)->{
             Map<StructureFeature<?>, StructureConfig> tempMap = new HashMap<>(serverWorld.getChunkManager().getChunkGenerator().getStructuresConfig().getStructures());
-            tempMap.put(DraconicWizardryStructures.DRAGON_NEST, StructuresConfig.DEFAULT_STRUCTURES.get(DraconicWizardry.DRAGON_NEST));
+            tempMap.put(DraconicWizardryStructures.DRAGON_NEST, StructuresConfig.DEFAULT_STRUCTURES.get(DraconicWizardryStructures.DRAGON_NEST));
             ((StructuresConfigAccessor)serverWorld.getChunkManager().getChunkGenerator().getStructuresConfig()).setStructures(tempMap);
         }
         );
