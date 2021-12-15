@@ -29,7 +29,8 @@
     ]
   },
   "mixins": [
-    "dw.mixins.json"
+    "dw.mixins.json",
+    "draconic.wizardry.mixins.json"
   ],
 
   "depends": {
