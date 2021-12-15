@@ -40,24 +40,5 @@ public class DraconicWizardryMain implements ModInitializer
                         context.getGenerationSettings().addBuiltInStructure(DraconicWizardryConfiguredStructures.CONFIGURED_DRAGON_NEST);
                     }
             );
-        addStructureSpawningToAllDimensions();
     }
-    /*
-     * This will add our structure's spacing to all dimensions so that even json defined dimensions
-     * with their own json noise setting file can still spawn our structure if we add it to the
-     * dimension's biomes as well.
-     *
-     *  If you want to do dimension based blacklisting, you will need to manually
-     *  remove your structure from the chunkgenerator's structure spacing map.
-     * If the spacing or our structure is not added, the structure doesn't spawn in that dimension.
-     */
-     public static void addStructureSpawningToAllDimensions()
-     {
-        ServerWorldEvents.LOAD.register((MinecraftServer minecraftServer, ServerWorld serverWorld)->{
-            Map<StructureFeature<?>, StructureConfig> tempMap = new HashMap<>(serverWorld.getChunkManager().getChunkGenerator().getStructuresConfig().getStructures());
-            tempMap.put(DraconicWizardryStructures.DRAGON_NEST, StructuresConfig.DEFAULT_STRUCTURES.get(DraconicWizardryStructures.DRAGON_NEST));
-            ((StructuresConfigAccessor)serverWorld.getChunkManager().getChunkGenerator().getStructuresConfig()).setStructures(tempMap);
-        }
-        );
-     }
 }
