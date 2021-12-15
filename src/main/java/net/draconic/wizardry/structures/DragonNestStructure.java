@@ -2,7 +2,7 @@ package net.draconic.wizardry.structures;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
-import com.telepathicgrunt.structure_tutorial.StructureTutorialMain;
+import net.draconic.wizardry.DraconicWizardryMain;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.structure.MarginedStructureStart;
@@ -30,10 +30,8 @@ import org.apache.logging.log4j.Level;
 
 import java.util.List;
 
-public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
-{
-  public DragonNestStructure(Codec<DefaultFeatureConfig> codec)
-  {
+public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig> {
+  public DragonNestStructure(Codec<DefaultFeatureConfig> codec) {
     super(codec);
   }
   
@@ -43,43 +41,6 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
     return DragonNestStructure.Start::new;
   }
   
-   /**
-     * || ONLY WORKS IN FORGE 34.1.12+ ||
-     *
-     * This method allows us to have mobs that spawn naturally over time in our structure.
-     * No other mobs will spawn in the structure of the same entity classification.
-     * The reason you want to match the classifications is so that your structure's mob
-     * will contribute to that classification's cap. Otherwise, it may cause a runaway
-     * spawning of the mob that will never stop.
-     *
-     * NOTE: getDefaultSpawnList is for monsters only and getDefaultCreatureSpawnList is
-     *       for creatures only. If you want to add entities of another classification,
-     *       use the StructureSpawnListGatherEvent to add water_creatures, water_ambient,
-     *       ambient, or misc mobs. Use that event to add/remove mobs from structures
-     *       that are not your own.
-     */
-   /*
-   Examples:
-   private static final List<spawnSettings.SpawnEntry> STRUCTURE_MONSTERS = ImmutableList.of
-      (
-      new SpawnSettings.SpawnEntry(EntityType.ILLUSIONER, 100, 4, 9)
-      );
-   @Override
-   public Lists<SpawnSettings.SpawnEntry> getMonsterSpawns()
-      {
-        return STRUCTURE_MONSTERS;
-      }
-   private static final Lists<SpawnSettings.SpawnEntry> STRUCTURE_CREATURES = ImmutablesList.of
-      (
-      new SpawnSettings.SpawnEntry(EntityType.SHEEP, 30, 10, 15)
-      );
-      @Override
-      public List<SpawnSettings.SpawnEntry> getCreatureSpawns()
-        {
-          return STRUCTURE_CREATURES;
-        }
-   */
-   
    /*
      * This is where extra checks can be done to determine if the structure can spawn here.
      * This only needs to be overridden if you're adding additional spawn conditions.
@@ -107,14 +68,13 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
      * StructureTutorialMain class. If you check for the dimension there and do not add your
      * structure's spacing into the chunk generator, the structure will not spawn in that dimension!
      */
-     @Override
-     protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long seed, ChunkRandom chunkRandom, int chunkX, int chunkZ, Biome biome, ChunkPos chunkPos, DefaultFeatureConfig featureConfig)
-     {
+     //@Override
+     protected boolean shouldStartAt(ChunkGenerator chunkGenerator, BiomeSource biomeSource, long seed, ChunkRandom chunkRandom, int chunkX, int chunkZ, Biome biome, ChunkPos chunkPos, DefaultFeatureConfig featureConfig) {
         BlockPos centerOfChunk = new BlockPos((chunkX << 4) + 7, 0, (chunkZ << 4) + 7);
         int landHeight = chunkGenerator.getHeightInGround(centerOfChunk.getX(), centerOfChunk.getZ(), Heightmap.Type.WORLD_SURFACE_WG);
         BlockView columnOfBlocks = chunkGenerator.getColumnSample(centerOfChunk.getX(), centerOfChunk.getZ());
         BlockState topBlock = columnOfBlocks.getBlockState(centerOfChunk.up(landHeight));
-        return topBlock.getFluidState().isEmpty() //landHeight > 100;
+        return topBlock.getFluidState().isEmpty(); //landHeight > 100;
      }
      
      // Handles calling up the structure's pieces class and height that structure will spawn at.
@@ -122,7 +82,7 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
         public Start(StructureFeature<DefaultFeatureConfig> structureIn, int chunkX, int chunkZ, BlockBox blockBox, int referenceIn, long seedIn) {
             super(structureIn, chunkX, chunkZ, blockBox, referenceIn, seedIn);
         }
-        @Override
+        //@Override
         public void init(DynamicRegistryManager dynamicRegistryManager, ChunkGenerator chunkGenerator, StructureManager structureManager, int chunkX, intchunkZ, Biome biome, DefaultFeatureConfig defaultFeatureConfig)
         {
           //Turns the chunk coordinates into actual coordinates we can use. (Gets center of that chunk)
@@ -178,3 +138,6 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig>
                            //Either not intersecting or fully contained will make children pieces spawn just fine. It's easier that way.
                     true); //Place at heightmap (top land). Set this to false for structure to be place at the passed in blockpos's Y value instead.
                            //Definitely keep this false when placing structures in the nether as otherwise, heightmap placing will put the structure on the Bedrock roof.
+        }
+    }
+}
