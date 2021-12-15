@@ -168,20 +168,20 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig> 
                     // Our structure is only 1 piece outward and isn't recursive so any value of 1 or more doesn't change anything.
                     // However, I recommend you keep this a decent value like 10 so people can use datapacks to add additional pieces to your structure easily.
                     // But don't make it too large for recursive structures like villages or you'll crash server due to hundreds of pieces attempting to generate!
-                    10),
-                    StructurePoolBasedGenerator.generate(
-                            dynamicRegistryManager,
-                            structureSettingsAndStartPool,
-                            PoolStructurePiece::new,
-                            chunkGenerator,
-                            structureManager,
-                            centerPos, // Position of the structure. Y value is ignored if last parameter is set to true.
-                            this, // The class instance that holds the list that will be populated with the jigsaw pieces after this method.
-                            this.random,
-                            false, // Special boundary adjustments for villages. It's... hard to explain. Keep this false and make your pieces not be partially intersecting.
-                                   // Either not intersecting or fully contained will make children pieces spawn just fine. It's easier that way.
-                             true, // Place at heightmap (top land). Set this to false for structure to be place at the passed in blockpos's Y value instead.
-                                   // Definitely keep this false when placing structures in the nether as otherwise, heightmap placing will put the structure on the Bedrock roof.
+                    10);
+            StructurePoolBasedGenerator.generate(
+                    dynamicRegistryManager,
+                    structureSettingsAndStartPool,
+                    PoolStructurePiece::new,
+                    chunkGenerator,
+                    structureManager,
+                    centerPos, // Position of the structure. Y value is ignored if last parameter is set to true.
+                    this, // The class instance that holds the list that will be populated with the jigsaw pieces after this method.
+                    this.random,
+                    false,  // Special boundary adjustments for villages. It's... hard to explain. Keep this false and make your pieces not be partially intersecting.
+                            // Either not intersecting or fully contained will make children pieces spawn just fine. It's easier that way.
+                    true,   // Place at heightmap (top land). Set this to false for structure to be place at the passed in blockpos's Y value instead.
+                            // Definitely keep this false when placing structures in the nether as otherwise, heightmap placing will put the structure on the Bedrock roof.
                     heightLimitView);
         }
 
