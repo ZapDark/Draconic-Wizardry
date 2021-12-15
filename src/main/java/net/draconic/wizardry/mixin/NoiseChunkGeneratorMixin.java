@@ -23,7 +23,7 @@ public class NoiseChunkGeneratorMixin
     at = @At(value = "HEAD"),
     cancellable = true
   )
-  private void structureMobs(Biome biome, StructureAccessor accessor, SpawnGroup group, BlockPos pos, CallbackInfoReturnable<list<spawnSettings.SpawnEntry>> cir)
+  private void structureMobs(Biome biome, StructureAccessor accessor, SpawnGroup group, BlockPos pos, CallbackInfoReturnable<List<SpawnSettings.SpawnEntry>> cir)
   {
     // Check if in our structure and grab mob list if so
     List<SpawnSettings.SpawnEntry> list = getStructureSpawns(biome, accessor, group, pos);
