@@ -1,20 +1,14 @@
 {
-    "type": "minecraft:crafting_shapless",
-    "pattern": [
-        "  #",
-        " / "
-    ],
-    "key": {
-        "#": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
             "item": "dw:fire_gem_large"
         },
-        "/": {
+        {
             "item": "dw:chisel"
         }
-    },
+    ],
     "result": {
-        "item": "dw:fire_gem",
-        "count": 1
-    },
-    "group": "MATERIALS"
+        "item": "dw:fire_gem"
+    }
 }

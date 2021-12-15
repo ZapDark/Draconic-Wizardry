@@ -1,20 +1,14 @@
 {
-    "type": "minecraft:crafting_shapless",
-    "pattern": [
-        "  #",
-        " / "
-    ],
-    "key": {
-        "#": {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
             "item": "dw:magic_gem_large"
         },
-        "/": {
+        {
             "item": "dw:chisel"
         }
-    },
+    ],
     "result": {
-        "item": "dw:magic_gem",
-        "count": 1
-    },
-    "group": "MATERIALS"
+        "item": "dw:magic_gem"
+    }
 }
