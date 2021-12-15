@@ -37,7 +37,7 @@ public class NoiseChunkGeneratorMixin {
      *
      * This way of doing structure mob spawning will prevent biome's mobs from spawning in the structure.
      */
-    private static List<SpawnSettings.SpawnEntry> getStructureSpawns(Biome biome, StructureAccessor accessor, SpawnGroup group, BlockPos pos){
+    private Pool<SpawnSettings.SpawnEntry> getStructureSpawns(Biome biome, StructureAccessor accessor, SpawnGroup group, BlockPos pos){
 
         if (group == SpawnGroup.MONSTER) {
             if (accessor.getStructureAt(pos, true, DraconicWizardryStructures.DRAGON_NEST).hasChildren()) {
