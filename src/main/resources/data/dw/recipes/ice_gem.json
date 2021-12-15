@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "dw:ice_gem_large"
+        },
+        {
+            "item": "dw:chisel"
+        }
+    ],
+    "result": {
+        "item": "dw:ice_gem"
+    }
+}

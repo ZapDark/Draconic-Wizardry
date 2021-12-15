@@ -22,11 +22,9 @@ import java.util.Map;
 
 public class DraconicWizardryMain implements ModInitializer
 {
-    public static final Logger LOGGER = LogManager.getLogger();
     public static final String modID = "dw";
 
     @Override
-    @SuppressWarnings("deprecation")
     public void onInitialize()
     {
         ModBlocks.registerBlocks();
@@ -34,6 +32,8 @@ public class DraconicWizardryMain implements ModInitializer
         EntityRegistry.register();
         SpawnInit.init();
         ModItems.registerItems();
+        ModBlocks.registerBlocks();
+        ModFeatures.registerFeatures();
         GeckoLib.initialize();
         DraconicWizardryStructures.setupAndRegisterStructureFeatures();
         DraconicWizardryConfiguredStructures.registerConfiguredStructures();
@@ -45,5 +45,8 @@ public class DraconicWizardryMain implements ModInitializer
                         context.getGenerationSettings().addBuiltInStructure(DraconicWizardryConfiguredStructures.CONFIGURED_DRAGON_NEST);
                     }
             );
+        EntityRegistry.register();
+        SpawnInit.init();
+
     }
 }
