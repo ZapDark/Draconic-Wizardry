@@ -56,7 +56,7 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig> 
      *       ambient, or misc mobs. Use that event to add/remove mobs from structures
      *       that are not your own.
      */
-    private static final Pool<SpawnSettings.SpawnEntry> STRUCTURE_MONSTERS = Pool.of(
+    /*private static final Pool<SpawnSettings.SpawnEntry> STRUCTURE_MONSTERS = Pool.of(
             new SpawnSettings.SpawnEntry(EntityType.ILLUSIONER, 100, 4, 9),
             new SpawnSettings.SpawnEntry(EntityType.VINDICATOR, 100, 4, 9)
     );
@@ -72,9 +72,9 @@ public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig> 
     @Override
     public Pool<SpawnSettings.SpawnEntry> getCreatureSpawns() {
         return STRUCTURE_CREATURES;
-    }
-  
-  
+        }
+      */
+
    /*
      * This is where extra checks can be done to determine if the structure can spawn here.
      * This only needs to be overridden if you're adding additional spawn conditions.
