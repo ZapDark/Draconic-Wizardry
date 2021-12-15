@@ -19,9 +19,13 @@ public class FireWand extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack wand = player.getStackInHand(hand);
         if (!world.isClient) {
+            //Creates FireBall ITEM
             FireBall fireBall = new FireBall(new Item.Settings().group(ItemGroup.COMBAT));
-            FireBallEntity fireballEntity = fireBall.createFireBall(world, wand, player);
+            //Uses FireBall ITEM to create FireBallEntity
+            FireBallEntity fireballEntity = fireBall.createFireBall(world, player);
+
 			fireballEntity.setProperties(player, player.getPitch(), player.getYaw(), 0.0F, 3.0F, 1.0F);
+
             world.spawnEntity(fireballEntity);
         }
         return TypedActionResult.pass(wand);

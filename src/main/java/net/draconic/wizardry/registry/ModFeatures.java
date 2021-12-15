@@ -13,9 +13,6 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 import net.minecraft.world.gen.feature.Feature;
 import net.draconic.wizardry.DraconicWizardryMain;
-import net.draconic.wizardry.blocks.TinOreBlock;
-import net.draconic.wizardry.registry.*;
-import net.fabricmc.fabric.api.biome.v1.BiomeModification;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 

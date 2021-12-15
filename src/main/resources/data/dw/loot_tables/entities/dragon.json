@@ -1,0 +1,30 @@
+{
+    "pools": [
+      {
+        "rolls": 5,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "dw:fire_gem_large"
+          },
+          {
+            "type": "minecraft:item",
+            "name": "dw:ice_gem_large"
+          },
+          {
+            "type": "minecraft:item",
+            "name": "dw:water_gem_large"
+          },
+          {
+            "type": "minecraft:item",
+            "name": "dw:magic_gem_large"
+          },
+          {
+            "type": "minecraft:item",
+            "name": "dw:earth_gem_large"
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,7 +1,5 @@
 package net.draconic.wizardry.registry;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -29,7 +27,7 @@ public class ModItems{
     public static final MagicWand MAGIC_WAND = new MagicWand(new MagicWand.Settings().group(ItemGroup.COMBAT));
     public static final EarthWand EARTH_WAND = new EarthWand(new EarthWand.Settings().group(ItemGroup.COMBAT));
     //Projectiles
-    public static final Item FIREBALL = new Item(new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item FIRE_BALL = new Item(new Item.Settings().group(ItemGroup.COMBAT));
     //Ingots and Ores
     public static final BlockItem TIN_ORE = new BlockItem(ModBlocks.TIN_ORE, new BlockItem.Settings().group(ItemGroup.BUILDING_BLOCKS));
     public static final Item TIN_INGOT = new Item(new Item.Settings().group(ItemGroup.MATERIALS));
@@ -58,7 +56,7 @@ public class ModItems{
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "magic_wand"), MAGIC_WAND);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "earth_wand"), EARTH_WAND);
         //Projectiles
-        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "fireball"), FIREBALL);
+        Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "fire_ball"), FIRE_BALL);
         //Ingots and Ores
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "tin_ore"), TIN_ORE);
         Registry.register(Registry.ITEM, new Identifier(DraconicWizardryMain.modID, "tin_ingot"), TIN_INGOT);

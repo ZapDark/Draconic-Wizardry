@@ -1,5 +1,6 @@
 package net.draconic.wizardry;
 
+import net.draconic.wizardry.client.registry.*;
 import net.draconic.wizardry.registry.*;
 import net.fabricmc.api.ModInitializer;
 import software.bernie.geckolib3.GeckoLib;
