@@ -1,6 +1,7 @@
 package net.draconic.wizardry;
 
-import net.draconic.wizardry.registry.ModItems;
+import net.draconic.wizardry.client.registry.*;
+import net.draconic.wizardry.registry.*;
 import net.fabricmc.api.ModInitializer;
 import software.bernie.geckolib3.GeckoLib;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -28,6 +29,10 @@ public class DraconicWizardryMain implements ModInitializer
     @SuppressWarnings("deprecation")
     public void onInitialize()
     {
+        ModBlocks.registerBlocks();
+        ModFeatures.registerFeatures();
+        EntityRegistry.register();
+        SpawnInit.init();
         ModItems.registerItems();
         GeckoLib.initialize();
         DraconicWizardryStructures.setupAndRegisterStructureFeatures();
