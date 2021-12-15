@@ -1,6 +1,5 @@
 package net.draconic.wizardry.structures;
 
-import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.draconic.wizardry.DraconicWizardryMain;
 import net.minecraft.block.BlockState;
@@ -29,8 +28,6 @@ import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraft.world.gen.feature.StructurePoolFeatureConfig;
 import org.apache.logging.log4j.Level;
-
-import java.util.List;
 
 public class DragonNestStructure extends StructureFeature<DefaultFeatureConfig> {
   public DragonNestStructure(Codec<DefaultFeatureConfig> codec) {
