@@ -1,6 +1,6 @@
 package net.draconic.wizardry;
 
-import net.draconic.wizardry.structures.DragonNestStructure
+import net.draconic.wizardry.structures.DragonNestStructure;
 import net.fabricmc.fabric.api.structure.v1.FabricStructureBuilder;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.GenerationStep;
@@ -14,7 +14,7 @@ public class DraconicWizardryStructures
   public static StructureFeature<DefaultFeatureConfig> DRAGON_NEST = new DragonNestStructure(DefaultFeatureConfig.CODEC);
   public static void setupAndRegisterStructureFeatures()
   {
-    FabricStructureBuilder.create(new Identifier(DraconicWizardryMain.modID, "dragon_nest"), DRAGON_NEXT)
+    FabricStructureBuilder.create(new Identifier(DraconicWizardryMain.modID, "dragon_nest"), DRAGON_NEST)
     .step(GenerationStep.Feature.SURFACE_STRUCTURES)
     .defaultConfig(new StructureConfig(
           100, // average distance apart in chunks between spawn attempts
